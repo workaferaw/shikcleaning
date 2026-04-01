@@ -58,14 +58,14 @@ export default function TrustBar() {
   return (
     <div>
       {/* Scrolling marquee of sectors */}
-      <div className="overflow-hidden border-y border-brand/10 bg-navy py-5">
-        <div className="animate-marquee flex w-max gap-12">
+      <div className="overflow-hidden border-y border-white/[0.06] bg-navy py-5">
+        <div className="animate-marquee flex w-max gap-14">
           {doubled.map((item, i) => (
             <div
               key={`${item.label}-${i}`}
-              className="flex flex-shrink-0 items-center gap-2.5 text-sm font-semibold text-white/65 transition-colors hover:text-white"
+              className="flex flex-shrink-0 items-center gap-3 text-sm font-semibold tracking-wide text-white/55 transition-colors hover:text-white"
             >
-              <span className="flex h-7 w-7 items-center justify-center rounded-md bg-brand/15 text-brand [&>svg]:h-3.5 [&>svg]:w-3.5">
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand/10 text-brand [&>svg]:h-4 [&>svg]:w-4">
                 {item.icon}
               </span>
               {item.label}
@@ -75,21 +75,21 @@ export default function TrustBar() {
       </div>
 
       {/* Client logos section */}
-      <div className="bg-navy-mid border-b border-brand/10 py-8">
+      <div className="bg-navy-mid border-b border-white/[0.06] py-10">
         <div className="mx-auto max-w-[1200px] px-7">
-          <p className="mb-5 text-center text-xs font-bold uppercase tracking-widest text-white/30">Trusted By</p>
-          <div className="flex flex-wrap items-center justify-center gap-10">
+          <p className="mb-6 text-center text-[0.65rem] font-bold uppercase tracking-[0.25em] text-white/25">Trusted By</p>
+          <div className="flex flex-wrap items-center justify-center gap-12">
             {clients.map((client) => (
-              <div key={client.name} className="flex items-center gap-4 group transition-all hover:scale-105">
-                <div className="relative h-14 w-14 overflow-hidden rounded-xl border border-brand/15 bg-white/5">
+              <div key={client.name} className="flex items-center gap-5 group transition-all duration-300 hover:scale-105">
+                <div className="relative h-16 w-16 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.07] shadow-[0_4px_16px_rgba(0,0,0,.15)] backdrop-blur-sm">
                   <Image
                     src={client.logo}
                     alt={client.name}
                     fill
-                    className="object-contain p-1.5"
+                    className="object-contain p-2"
                   />
                 </div>
-                <span className="text-sm font-semibold text-white/60 group-hover:text-white transition-colors">{client.name}</span>
+                <span className="text-sm font-semibold tracking-wide text-white/50 group-hover:text-white/80 transition-colors">{client.name}</span>
               </div>
             ))}
           </div>

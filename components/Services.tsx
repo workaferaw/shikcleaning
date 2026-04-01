@@ -59,38 +59,38 @@ export default function Services() {
   useReveal()
 
   return (
-    <section id="services" className="bg-navy-mid py-24 md:py-32">
+    <section id="services" className="bg-navy-mid py-28 md:py-36">
       <div className="mx-auto max-w-[1200px] px-7">
-        <div className="reveal mb-14 text-center">
-          <h2 className="mb-4 text-[clamp(1.7rem,4vw,2.6rem)] font-extrabold text-white">
+        <div className="reveal mb-16 text-center">
+          <h2 className="mb-5 text-[clamp(1.7rem,4vw,2.6rem)] font-extrabold tracking-tight text-white">
             Specialized <span className="text-brand">Cleaning</span> Services
           </h2>
-          <p className="mx-auto max-w-[560px] text-base leading-relaxed text-white/55">
+          <p className="mx-auto max-w-[560px] text-base leading-relaxed text-white/50">
             From marble floors to high-rise exteriors — precision, accountability, and premium-grade results for every project.
           </p>
         </div>
-        <div className="stagger grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="stagger grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((svc) => (
             <div
               key={svc.title}
-              className="reveal group relative cursor-pointer overflow-hidden rounded-2xl border border-brand/10 bg-white/[0.04] transition-all duration-300 hover:-translate-y-2 hover:border-brand/30 hover:bg-white/[0.07] hover:shadow-[0_20px_60px_rgba(1,4,30,.25)]"
+              className="reveal group relative cursor-pointer overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.03] backdrop-blur-sm transition-all duration-400 hover:-translate-y-2 hover:border-brand/25 hover:bg-white/[0.06] hover:shadow-[0_24px_64px_rgba(43,127,212,.12)]"
             >
               {/* Top gradient bar */}
               <div className={`h-1 w-full origin-left scale-x-0 bg-gradient-to-r ${svc.gradient} transition-transform duration-500 group-hover:scale-x-100`} />
 
-              <div className="p-7">
-                {/* Icon with animated background */}
-                <div className="relative mb-6">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-brand/15 text-brand transition-all duration-300 group-hover:bg-brand group-hover:text-white group-hover:shadow-[0_8px_24px_rgba(43,127,212,.3)] group-hover:scale-110">
+              <div className="p-8">
+                {/* Icon */}
+                <div className="relative mb-7">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-brand/10 text-brand transition-all duration-400 group-hover:bg-brand group-hover:text-white group-hover:shadow-[0_8px_28px_rgba(43,127,212,.35)] group-hover:scale-110">
                     <span className="[&>svg]:h-6 [&>svg]:w-6">{svc.icon}</span>
                   </div>
                 </div>
 
-                <h3 className="mb-2 text-lg font-bold text-white transition-colors group-hover:text-brand">{svc.title}</h3>
-                <p className="mb-4 text-sm leading-relaxed text-white/50">{svc.desc}</p>
+                <h3 className="mb-3 text-lg font-bold text-white transition-colors duration-300 group-hover:text-brand">{svc.title}</h3>
+                <p className="mb-5 text-sm leading-relaxed text-white/45">{svc.desc}</p>
 
                 {/* Learn more link */}
-                <div className="flex items-center gap-1.5 text-sm font-semibold text-brand opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-1">
+                <div className="flex items-center gap-2 text-sm font-semibold text-brand opacity-0 transition-all duration-400 group-hover:opacity-100 group-hover:translate-x-1">
                   Learn more
                   <svg width={14} height={14} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>
                     <path d="M5 12h14M12 5l7 7-7 7" />
@@ -99,7 +99,7 @@ export default function Services() {
               </div>
 
               {/* Background glow on hover */}
-              <div className="pointer-events-none absolute -bottom-16 -right-16 h-32 w-32 rounded-full bg-brand/0 transition-all duration-500 group-hover:bg-brand/10" />
+              <div className="pointer-events-none absolute -bottom-20 -right-20 h-40 w-40 rounded-full bg-brand/0 transition-all duration-500 group-hover:bg-brand/[0.08]" />
             </div>
           ))}
         </div>

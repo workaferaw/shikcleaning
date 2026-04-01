@@ -13,7 +13,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="relative overflow-hidden bg-gradient-to-br from-navy to-navy-light py-24 md:py-32">
+    <section id="contact" className="relative overflow-hidden bg-gradient-to-br from-navy to-navy-light py-28 md:py-36">
       <div className="absolute -top-32 -right-32 h-[560px] w-[560px] rounded-full bg-brand/[0.06]" />
       <div className="absolute -bottom-20 -left-20 h-[400px] w-[400px] rounded-full bg-brand/[0.07]" />
       <div className="container relative z-10 mx-auto max-w-[1200px] px-7">
@@ -54,7 +54,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="reveal rounded-3xl bg-navy-mid border border-brand/10 p-8 shadow-[0_20px_60px_rgba(1,4,30,.3)] md:p-10">
+          <form onSubmit={handleSubmit} className="reveal rounded-3xl bg-navy-mid border border-white/[0.06] p-8 shadow-[0_24px_64px_rgba(0,0,0,.25)] md:p-10">
             <div className="mb-6 text-xl font-extrabold text-white">Request a Free Quote</div>
             <div className="mb-3.5 grid grid-cols-1 gap-3 sm:grid-cols-2">
               <div>
