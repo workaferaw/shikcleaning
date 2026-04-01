@@ -40,7 +40,7 @@ export default function Footer() {
           <div>
             <div className="mb-4 text-xs font-bold uppercase tracking-widest text-white">Services</div>
             <ul className="flex flex-col gap-2">
-              {['Deep Cleaning', 'Event Cleaning', 'Post-Construction', 'Sofa & Carpet'].map((item) => (
+              {['Marble Floor Cleaning', 'High-Rise Exterior', 'Wooden Floor Polishing', 'Fumigation', 'Window Cleaning'].map((item) => (
                 <li key={item}>
                   <Link href="#services" className="text-sm text-white/40 transition-colors hover:pl-1 hover:text-brand">
                     {item}

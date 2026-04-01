@@ -20,6 +20,7 @@ Embassies, hotels (ints), corporates, offices,
 
 refere to the best out there and refere to the brandn page fo rlogo and color stuff, go ahead and do you r  magic
 
+
 ## Assets
 - The branding assets (Logos, SVGs, etc.) are located in the `/branding` directory.
 

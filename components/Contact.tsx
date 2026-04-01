@@ -54,47 +54,48 @@ export default function Contact() {
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="reveal rounded-3xl bg-white p-8 shadow-[0_20px_60px_rgba(1,4,30,.1)] md:p-10">
-            <div className="mb-6 text-xl font-extrabold text-navy">Request a Free Quote</div>
+          <form onSubmit={handleSubmit} className="reveal rounded-3xl bg-navy-mid border border-brand/10 p-8 shadow-[0_20px_60px_rgba(1,4,30,.3)] md:p-10">
+            <div className="mb-6 text-xl font-extrabold text-white">Request a Free Quote</div>
             <div className="mb-3.5 grid grid-cols-1 gap-3 sm:grid-cols-2">
               <div>
-                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-[#374151]">First Name</label>
-                <input type="text" placeholder="John" className="w-full rounded-xl border-2 border-[#e5e7eb] bg-off-white px-4 py-2.5 text-sm text-navy outline-none transition-colors focus:border-brand focus:bg-white focus:shadow-[0_0_0_3px_rgba(43,127,212,.1)]" />
+                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-white/50">First Name</label>
+                <input type="text" placeholder="John" className="w-full rounded-xl border-2 border-brand/15 bg-white/5 px-4 py-2.5 text-sm text-white placeholder:text-white/25 outline-none transition-colors focus:border-brand focus:bg-white/10 focus:shadow-[0_0_0_3px_rgba(43,127,212,.15)]" />
               </div>
               <div>
-                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-[#374151]">Last Name</label>
-                <input type="text" placeholder="Smith" className="w-full rounded-xl border-2 border-[#e5e7eb] bg-off-white px-4 py-2.5 text-sm text-navy outline-none transition-colors focus:border-brand focus:bg-white focus:shadow-[0_0_0_3px_rgba(43,127,212,.1)]" />
+                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-white/50">Last Name</label>
+                <input type="text" placeholder="Smith" className="w-full rounded-xl border-2 border-brand/15 bg-white/5 px-4 py-2.5 text-sm text-white placeholder:text-white/25 outline-none transition-colors focus:border-brand focus:bg-white/10 focus:shadow-[0_0_0_3px_rgba(43,127,212,.15)]" />
               </div>
             </div>
             <div className="mb-3.5">
-              <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-[#374151]">Company / Organisation</label>
-              <input type="text" placeholder="Your organisation name" className="w-full rounded-xl border-2 border-[#e5e7eb] bg-off-white px-4 py-2.5 text-sm text-navy outline-none transition-colors focus:border-brand focus:bg-white focus:shadow-[0_0_0_3px_rgba(43,127,212,.1)]" />
+              <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-white/50">Company / Organisation</label>
+              <input type="text" placeholder="Your organisation name" className="w-full rounded-xl border-2 border-brand/15 bg-white/5 px-4 py-2.5 text-sm text-white placeholder:text-white/25 outline-none transition-colors focus:border-brand focus:bg-white/10 focus:shadow-[0_0_0_3px_rgba(43,127,212,.15)]" />
             </div>
             <div className="mb-3.5">
-              <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-[#374151]">Email Address</label>
-              <input type="email" placeholder="john@company.com" className="w-full rounded-xl border-2 border-[#e5e7eb] bg-off-white px-4 py-2.5 text-sm text-navy outline-none transition-colors focus:border-brand focus:bg-white focus:shadow-[0_0_0_3px_rgba(43,127,212,.1)]" />
+              <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-white/50">Email Address</label>
+              <input type="email" placeholder="john@company.com" className="w-full rounded-xl border-2 border-brand/15 bg-white/5 px-4 py-2.5 text-sm text-white placeholder:text-white/25 outline-none transition-colors focus:border-brand focus:bg-white/10 focus:shadow-[0_0_0_3px_rgba(43,127,212,.15)]" />
             </div>
             <div className="mb-3.5">
-              <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-[#374151]">Service Required</label>
-              <select className="w-full rounded-xl border-2 border-[#e5e7eb] bg-off-white px-4 py-2.5 text-sm text-navy outline-none transition-colors focus:border-brand focus:bg-white focus:shadow-[0_0_0_3px_rgba(43,127,212,.1)]">
-                <option value="">Select a service…</option>
-                <option>Deep Cleaning</option>
-                <option>Event Cleaning</option>
-                <option>Post-Construction Cleaning</option>
-                <option>Sofa &amp; Carpet Cleaning</option>
-                <option>Multiple Services</option>
+              <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-white/50">Service Required</label>
+              <select className="w-full rounded-xl border-2 border-brand/15 bg-white/5 px-4 py-2.5 text-sm text-white outline-none transition-colors focus:border-brand focus:bg-white/10 focus:shadow-[0_0_0_3px_rgba(43,127,212,.15)]">
+                <option value="" className="bg-navy-mid">Select a service…</option>
+                <option className="bg-navy-mid">Marble Floor Cleaning & Polishing</option>
+                <option className="bg-navy-mid">High-Rise Building Exterior Cleaning</option>
+                <option className="bg-navy-mid">Wooden Floor Polishing</option>
+                <option className="bg-navy-mid">Professional Fumigation Services</option>
+                <option className="bg-navy-mid">Interior & Exterior Window Cleaning</option>
+                <option className="bg-navy-mid">Multiple Services</option>
               </select>
             </div>
             <div className="mb-5">
-              <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-[#374151]">Message</label>
-              <textarea placeholder="Tell us about your space and requirements…" rows={4} className="min-h-[90px] w-full resize-y rounded-xl border-2 border-[#e5e7eb] bg-off-white px-4 py-2.5 text-sm text-navy outline-none transition-colors focus:border-brand focus:bg-white focus:shadow-[0_0_0_3px_rgba(43,127,212,.1)]" />
+              <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-white/50">Message</label>
+              <textarea placeholder="Tell us about your space and requirements…" rows={4} className="min-h-[90px] w-full resize-y rounded-xl border-2 border-brand/15 bg-white/5 px-4 py-2.5 text-sm text-white placeholder:text-white/25 outline-none transition-colors focus:border-brand focus:bg-white/10 focus:shadow-[0_0_0_3px_rgba(43,127,212,.15)]" />
             </div>
             <button
               type="submit"
               className={`w-full rounded-full py-3.5 text-sm font-bold transition-all ${
                 submitted
                   ? 'bg-emerald-600 text-white'
-                  : 'bg-gradient-to-r from-brand to-brand-light text-white hover:-translate-y-0.5 hover:shadow-[0_10px_32px_rgba(43,127,212,.42)]'
+                  : 'bg-brand text-white hover:-translate-y-0.5 hover:shadow-[0_10px_32px_rgba(43,127,212,.42)]'
               }`}
             >
               {submitted ? '✓ Request Sent!' : 'Send Request →'}

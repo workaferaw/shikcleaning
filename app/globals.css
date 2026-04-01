@@ -7,10 +7,8 @@
   --navy-mid: #071535;
   --navy-light: #0d2a52;
   --brand: #2B7FD4;
-  --brand-light: #5A9FE4;
-  --brand-pale: #E4F0FB;
+  --brand-light: #1A5FA8;
   --white: #ffffff;
-  --off-white: #f7fafc;
   --text: #0d1321;
   --text-mid: #374151;
   --text-light: #6b7280;
@@ -26,7 +24,7 @@
 body {
   font-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
   color: var(--text);
-  background: var(--white);
+  background: var(--navy);
   overflow-x: hidden;
   line-height: 1.6;
 }

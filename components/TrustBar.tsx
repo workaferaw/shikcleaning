@@ -1,5 +1,7 @@
 'use client'
 
+import Image from 'next/image'
+
 const items = [
   {
     label: 'Embassies & Consulates',
@@ -43,23 +45,55 @@ const items = [
   },
 ]
 
+const clients = [
+  {
+    name: 'BNT Industry and Trading PLC',
+    logo: '/clients/bnt.jpg',
+  },
+]
+
 export default function TrustBar() {
   const doubled = [...items, ...items]
 
   return (
-    <div className="overflow-hidden border-y border-brand/10 bg-navy-mid py-5">
-      <div className="animate-marquee flex w-max gap-12">
-        {doubled.map((item, i) => (
-          <div
-            key={`${item.label}-${i}`}
-            className="flex flex-shrink-0 items-center gap-2.5 text-sm font-semibold text-white/65 transition-colors hover:text-white"
-          >
-            <span className="flex h-7 w-7 items-center justify-center rounded-md bg-brand/15 text-brand [&>svg]:h-3.5 [&>svg]:w-3.5">
-              {item.icon}
-            </span>
-            {item.label}
+    <div>
+      {/* Scrolling marquee of sectors */}
+      <div className="overflow-hidden border-y border-brand/10 bg-navy py-5">
+        <div className="animate-marquee flex w-max gap-12">
+          {doubled.map((item, i) => (
+            <div
+              key={`${item.label}-${i}`}
+              className="flex flex-shrink-0 items-center gap-2.5 text-sm font-semibold text-white/65 transition-colors hover:text-white"
+            >
+              <span className="flex h-7 w-7 items-center justify-center rounded-md bg-brand/15 text-brand [&>svg]:h-3.5 [&>svg]:w-3.5">
+                {item.icon}
+              </span>
+              {item.label}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Client logos section */}
+      <div className="bg-navy-mid border-b border-brand/10 py-8">
+        <div className="mx-auto max-w-[1200px] px-7">
+          <p className="mb-5 text-center text-xs font-bold uppercase tracking-widest text-white/30">Trusted By</p>
+          <div className="flex flex-wrap items-center justify-center gap-10">
+            {clients.map((client) => (
+              <div key={client.name} className="flex items-center gap-4 group transition-all hover:scale-105">
+                <div className="relative h-14 w-14 overflow-hidden rounded-xl border border-brand/15 bg-white/5">
+                  <Image
+                    src={client.logo}
+                    alt={client.name}
+                    fill
+                    className="object-contain p-1.5"
+                  />
+                </div>
+                <span className="text-sm font-semibold text-white/60 group-hover:text-white transition-colors">{client.name}</span>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </div>
   )

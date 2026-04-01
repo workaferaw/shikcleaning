@@ -52,15 +52,15 @@ export default function WhoWeServe() {
   useReveal()
 
   return (
-    <section id="clients" className="py-24 md:py-32">
+    <section id="clients" className="bg-navy py-24 md:py-32">
       <div className="mx-auto max-w-[1200px] px-7">
         <div className="grid gap-16 md:grid-cols-2 md:gap-20">
           <div>
             <div className="reveal">
-              <h2 className="mb-4 text-[clamp(1.7rem,4vw,2.6rem)] font-extrabold text-navy">
+              <h2 className="mb-4 text-[clamp(1.7rem,4vw,2.6rem)] font-extrabold text-white">
                 Serving the Most <span className="text-brand">Demanding</span> Environments
               </h2>
-              <p className="mb-10 max-w-[560px] text-base leading-relaxed text-[#374151]">
+              <p className="mb-10 max-w-[560px] text-base leading-relaxed text-white/55">
                 We understand that premium environments require premium care. Our teams are trained, vetted, and equipped to operate in high-security, high-standard facilities across Addis Ababa.
               </p>
             </div>
@@ -68,30 +68,30 @@ export default function WhoWeServe() {
               {clients.map((c) => (
                 <div
                   key={c.name}
-                  className="reveal group flex cursor-pointer items-center gap-3 rounded-xl border-2 border-[#e5e7eb] p-4 transition-all duration-300 hover:translate-x-1 hover:border-brand hover:bg-brand-pale hover:shadow-md"
+                  className="reveal group flex cursor-pointer items-center gap-3 rounded-xl border-2 border-brand/15 bg-white/[0.04] p-4 transition-all duration-300 hover:translate-x-1 hover:border-brand/40 hover:bg-brand/10"
                 >
-                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-brand-pale text-brand transition-all duration-300 group-hover:bg-brand group-hover:text-white group-hover:scale-110 [&>svg]:h-5 [&>svg]:w-5">
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-brand/15 text-brand transition-all duration-300 group-hover:bg-brand group-hover:text-white group-hover:scale-110 [&>svg]:h-5 [&>svg]:w-5">
                     {c.icon}
                   </div>
                   <div>
-                    <div className="font-bold text-navy">{c.name}</div>
-                    <div className="text-xs text-[#6b7280]">{c.sub}</div>
+                    <div className="font-bold text-white">{c.name}</div>
+                    <div className="text-xs text-white/40">{c.sub}</div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="reveal rounded-3xl bg-gradient-to-br from-navy to-navy-light p-10 md:p-12">
+          <div className="reveal rounded-3xl bg-gradient-to-br from-navy-mid to-navy-light p-10 md:p-12 border border-brand/10">
             <div className="mb-2 text-base font-bold text-white">Why Choose Shik</div>
-            <div className="mb-8 text-sm text-white/55">Built for Addis Ababa&apos;s premium facilities</div>
+            <div className="mb-8 text-sm text-white/45">Built for Addis Ababa&apos;s premium facilities</div>
             <div className="space-y-4">
               {checkmarks.map((item) => (
                 <div key={item} className="group/check flex items-start gap-3 transition-all duration-200 hover:translate-x-1">
                   <svg className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand transition-transform duration-200 group-hover/check:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>
                     <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <span className="text-sm text-white/75 transition-colors group-hover/check:text-white">{item}</span>
+                  <span className="text-sm text-white/65 transition-colors group-hover/check:text-white">{item}</span>
                 </div>
               ))}
             </div>
@@ -99,7 +99,7 @@ export default function WhoWeServe() {
               <svg className="h-5 w-5 flex-shrink-0 text-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
                 <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
-              <div className="text-sm text-white/80">
+              <div className="text-sm text-white/70">
                 <strong className="text-brand">Satisfaction Guarantee</strong>
                 <br />
                 Not satisfied? We return at no additional charge.
