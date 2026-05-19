@@ -37,7 +37,7 @@ export default function Hero() {
 
       <div className="container relative z-10 mx-auto flex max-w-[800px] flex-col items-center px-7 pt-36 pb-28 text-center md:pt-44 md:pb-36">
         <div className={`mb-12 transition-all duration-700 delay-100 ${show}`}>
-          <Logo variant="light" width={64} />
+          <Logo variant="dark" width={64} />
         </div>
         <h1 className={`mb-6 text-[clamp(2.2rem,5.5vw,3.6rem)] font-extrabold leading-[1.08] tracking-tight text-white drop-shadow-[0_2px_16px_rgba(0,0,0,.3)] transition-all duration-700 delay-200 md:mb-7 ${show}`}>
           Professional cleaning management for business.

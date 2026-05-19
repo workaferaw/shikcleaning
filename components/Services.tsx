@@ -4,14 +4,24 @@ import { useReveal } from './useReveal'
 
 const services = [
   {
-    title: 'Marble Floor Cleaning & Polishing',
-    desc: 'Professional restoration and polishing of marble floors, bringing back the original shine and elegance to your space.',
+    title: 'Ceramic, SPC and Marble Floor Cleaning and Polishing',
+    desc: 'Professional restoration and polishing of various floor types, bringing back the original shine and elegance to your space.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75}>
         <path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
       </svg>
     ),
     gradient: 'from-blue-500 to-brand',
+  },
+  {
+    title: 'Post Construction Cleaning',
+    desc: 'Comprehensive deep cleaning services for newly built or renovated spaces, ensuring they are ready for use.',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75}>
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+      </svg>
+    ),
+    gradient: 'from-purple-500 to-brand',
   },
   {
     title: 'High-Rise Building Exterior Cleaning',

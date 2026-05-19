@@ -50,6 +50,12 @@ const clients = [
     name: 'BNT Industry and Trading PLC',
     logo: '/clients/bnt.jpg',
   },
+  {
+    name: 'Dice design plc',
+  },
+  {
+    name: 'Meri Podcast',
+  },
 ]
 
 export default function TrustBar() {
@@ -81,13 +87,17 @@ export default function TrustBar() {
           <div className="flex flex-wrap items-center justify-center gap-12">
             {clients.map((client) => (
               <div key={client.name} className="flex items-center gap-5 group transition-all duration-300 hover:scale-105">
-                <div className="relative h-16 w-16 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.07] shadow-[0_4px_16px_rgba(0,0,0,.15)] backdrop-blur-sm">
-                  <Image
-                    src={client.logo}
-                    alt={client.name}
-                    fill
-                    className="object-contain p-2"
-                  />
+                <div className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-white/[0.07] shadow-[0_4px_16px_rgba(0,0,0,.15)] backdrop-blur-sm">
+                  {client.logo ? (
+                    <Image
+                      src={client.logo}
+                      alt={client.name}
+                      fill
+                      className="object-contain p-2"
+                    />
+                  ) : (
+                    <span className="text-2xl font-bold uppercase text-white/70">{client.name.charAt(0)}</span>
+                  )}
                 </div>
                 <span className="text-sm font-semibold tracking-wide text-white/50 group-hover:text-white/80 transition-colors">{client.name}</span>
               </div>

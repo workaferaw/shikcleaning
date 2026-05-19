@@ -61,7 +61,7 @@ export default function Footer() {
           <div>
             <div className="mb-4 text-xs font-bold uppercase tracking-widest text-white">Contact</div>
             <div className="space-y-2.5 text-sm text-white/40">
-              <div>+251 92 321 4597</div>
+              <div>0940270521/0900050611</div>
               <div>info@shikcleaning.com</div>
               <div>Mon – Sun: 24/7 Service</div>
               <div>Addis Ababa, Ethiopia</div>
