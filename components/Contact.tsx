@@ -3,13 +3,36 @@
 import { useState } from 'react'
 import { useReveal } from './useReveal'
 
+type Status = 'idle' | 'sending' | 'sent' | 'error'
+
 export default function Contact() {
-  const [submitted, setSubmitted] = useState(false)
+  const [status, setStatus] = useState<Status>('idle')
   useReveal()
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setSubmitted(true)
+    setStatus('sending')
+
+    const form = e.currentTarget
+    const data = new FormData(form)
+    data.append('access_key', process.env.NEXT_PUBLIC_WEB3FORMS_KEY || '')
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: data,
+      })
+      const result = await res.json()
+      if (result.success) {
+        setStatus('sent')
+        form.reset()
+      } else {
+        setStatus('error')
+      }
+    } catch {
+      setStatus('error')
+    }
   }
 
   return (
@@ -54,28 +77,31 @@ export default function Contact() {
           </div>
 
           <form onSubmit={handleSubmit} className="border border-navy/10 bg-paper-mid p-8 md:p-10">
+            <input type="hidden" name="subject" value="New Quote Request — Shik Cleaning Website" />
+            <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+
             <div className="mb-7 font-display text-xl text-navy">Request a Free Quote</div>
             <div className="mb-3.5 grid grid-cols-1 gap-3 sm:grid-cols-2">
               <div>
                 <label className="eyebrow mb-1.5 block text-navy/45">First Name</label>
-                <input type="text" placeholder="John" className="w-full border border-navy/15 bg-paper px-4 py-2.5 text-sm text-navy placeholder:text-navy/25 outline-none transition-colors focus:border-brand" />
+                <input required type="text" name="first_name" placeholder="John" className="w-full border border-navy/15 bg-paper px-4 py-2.5 text-sm text-navy placeholder:text-navy/25 outline-none transition-colors focus:border-brand" />
               </div>
               <div>
                 <label className="eyebrow mb-1.5 block text-navy/45">Last Name</label>
-                <input type="text" placeholder="Smith" className="w-full border border-navy/15 bg-paper px-4 py-2.5 text-sm text-navy placeholder:text-navy/25 outline-none transition-colors focus:border-brand" />
+                <input required type="text" name="last_name" placeholder="Smith" className="w-full border border-navy/15 bg-paper px-4 py-2.5 text-sm text-navy placeholder:text-navy/25 outline-none transition-colors focus:border-brand" />
               </div>
             </div>
             <div className="mb-3.5">
               <label className="eyebrow mb-1.5 block text-navy/45">Company / Organisation</label>
-              <input type="text" placeholder="Your organisation name" className="w-full border border-navy/15 bg-paper px-4 py-2.5 text-sm text-navy placeholder:text-navy/25 outline-none transition-colors focus:border-brand" />
+              <input type="text" name="company" placeholder="Your organisation name" className="w-full border border-navy/15 bg-paper px-4 py-2.5 text-sm text-navy placeholder:text-navy/25 outline-none transition-colors focus:border-brand" />
             </div>
             <div className="mb-3.5">
               <label className="eyebrow mb-1.5 block text-navy/45">Email Address</label>
-              <input type="email" placeholder="john@company.com" className="w-full border border-navy/15 bg-paper px-4 py-2.5 text-sm text-navy placeholder:text-navy/25 outline-none transition-colors focus:border-brand" />
+              <input required type="email" name="email" placeholder="john@company.com" className="w-full border border-navy/15 bg-paper px-4 py-2.5 text-sm text-navy placeholder:text-navy/25 outline-none transition-colors focus:border-brand" />
             </div>
             <div className="mb-3.5">
               <label className="eyebrow mb-1.5 block text-navy/45">Service Required</label>
-              <select className="w-full border border-navy/15 bg-paper px-4 py-2.5 text-sm text-navy outline-none transition-colors focus:border-brand">
+              <select name="service" className="w-full border border-navy/15 bg-paper px-4 py-2.5 text-sm text-navy outline-none transition-colors focus:border-brand">
                 <option value="">Select a service…</option>
                 <option>High-Rise Building & Window Glass Cleaning</option>
                 <option>Post Construction Cleaning</option>
@@ -88,17 +114,20 @@ export default function Contact() {
             </div>
             <div className="mb-6">
               <label className="eyebrow mb-1.5 block text-navy/45">Message</label>
-              <textarea placeholder="Tell us about your space and requirements…" rows={4} className="min-h-[90px] w-full resize-y border border-navy/15 bg-paper px-4 py-2.5 text-sm text-navy placeholder:text-navy/25 outline-none transition-colors focus:border-brand" />
+              <textarea required name="message" placeholder="Tell us about your space and requirements…" rows={4} className="min-h-[90px] w-full resize-y border border-navy/15 bg-paper px-4 py-2.5 text-sm text-navy placeholder:text-navy/25 outline-none transition-colors focus:border-brand" />
             </div>
             <button
               type="submit"
-              className={`eyebrow w-full border py-4 transition-colors ${
-                submitted
+              disabled={status === 'sending'}
+              className={`eyebrow w-full border py-4 transition-colors disabled:cursor-not-allowed disabled:opacity-60 ${
+                status === 'sent'
                   ? 'border-emerald-600 bg-emerald-600 text-white'
+                  : status === 'error'
+                  ? 'border-red-600 bg-red-600 text-white'
                   : 'border-brand bg-brand text-white hover:border-brand-dark hover:bg-brand-dark'
               }`}
             >
-              {submitted ? 'Request Sent' : 'Send Request'}
+              {status === 'sending' ? 'Sending…' : status === 'sent' ? 'Request Sent' : status === 'error' ? 'Something Went Wrong — Try Again' : 'Send Request'}
             </button>
           </form>
         </div>
