@@ -63,36 +63,28 @@ export default function WhyUs() {
   useReveal()
 
   return (
-    <section id="why-us" className="relative overflow-hidden bg-navy py-28 md:py-36">
-      <div
-        className="absolute inset-0"
-        style={{
-          background: `
-            radial-gradient(ellipse 700px 500px at 85% 40%, rgba(43,127,212,.12) 0%, transparent 60%),
-            radial-gradient(ellipse 500px 400px at 10% 80%, rgba(43,127,212,.06) 0%, transparent 50%)
-          `,
-        }}
-      />
-      <div className="container relative z-10 mx-auto max-w-[1200px] px-7">
-        <div className="reveal mb-16 text-center">
-          <h2 className="mb-5 text-[clamp(1.7rem,4vw,2.6rem)] font-extrabold tracking-tight text-white">
-            The Standard That <span className="text-brand">Sets Us Apart</span>
+    <section id="why-us" className="bg-paper py-28 md:py-36">
+      <div className="mx-auto max-w-[1200px] px-7">
+        <div className="mb-12 max-w-[620px]">
+          <p className="eyebrow mb-5 text-brand-dark">Why Shik</p>
+          <h2 className="font-display text-[clamp(2rem,4.5vw,3.25rem)] leading-[1.1] text-navy">
+            The standard that <span className="italic text-brand-dark">sets us apart</span>
           </h2>
-          <p className="mx-auto max-w-[560px] text-base leading-relaxed text-white/50">
+          <p className="mt-6 text-base leading-relaxed text-navy/55">
             We don&apos;t just clean — we manage cleanliness as a professional discipline, with full accountability at every step.
           </p>
         </div>
-        <div className="stagger grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="stagger grid grid-cols-1 border-t border-l border-navy/10 sm:grid-cols-2 lg:grid-cols-3">
           {whyCards.map((c) => (
             <div
               key={c.title}
-              className="reveal group rounded-2xl border border-white/[0.07] bg-white/[0.03] p-7 backdrop-blur-sm transition-all duration-400 hover:-translate-y-1.5 hover:border-brand/20 hover:bg-white/[0.06] hover:shadow-[0_20px_48px_rgba(43,127,212,.08)]"
+              className="reveal group border-b border-r border-navy/10 p-9 transition-colors duration-300 hover:bg-navy/[0.02]"
             >
-              <div className="mb-6 flex h-13 w-13 items-center justify-center rounded-xl bg-brand/10 text-brand transition-all duration-400 group-hover:bg-brand/20 group-hover:scale-110 [&>svg]:h-5.5 [&>svg]:w-5.5">
+              <div className="mb-7 text-brand-dark transition-colors duration-300 group-hover:text-brand [&>svg]:h-7 [&>svg]:w-7">
                 {c.icon}
               </div>
-              <h3 className="mb-3 text-base font-bold text-white transition-colors duration-300 group-hover:text-brand">{c.title}</h3>
-              <p className="text-sm leading-relaxed text-white/45">{c.desc}</p>
+              <h3 className="mb-3 font-display text-lg text-navy transition-colors duration-300 group-hover:text-brand-dark">{c.title}</h3>
+              <p className="text-sm leading-relaxed text-navy/50">{c.desc}</p>
             </div>
           ))}
         </div>

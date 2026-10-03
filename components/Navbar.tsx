@@ -24,21 +24,21 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed inset-x-0 top-0 z-[1000] py-4 transition-all duration-300 ${
-          scrolled ? 'bg-navy py-3 shadow-[0_2px_24px_rgba(1,4,30,.35)]' : ''
+        className={`fixed inset-x-0 top-0 z-[1000] border-b border-navy/10 bg-paper/95 backdrop-blur-sm transition-all duration-300 ${
+          scrolled ? 'py-4 shadow-[0_1px_0_rgba(1,4,30,.04)]' : 'py-6'
         }`}
       >
         <div className="mx-auto flex max-w-[1200px] items-center justify-between px-7">
-          <Link href="#" className="flex items-center gap-2.5">
-            <Logo variant="dark" width={30} />
-            <span className="text-sm font-bold tracking-wide text-white">SHIK</span>
+          <Link href="#" className="flex items-center gap-3">
+            <Logo variant="light" width={26} />
+            <span className="font-display text-[1.05rem] italic tracking-tight text-navy">Shik</span>
           </Link>
-          <ul className="hidden items-center gap-8 md:flex">
+          <ul className="hidden items-center gap-10 md:flex">
             {links.map(({ href, label }) => (
               <li key={href}>
                 <Link
                   href={href}
-                  className="text-[0.82rem] font-semibold uppercase tracking-wide text-white/80 transition-colors hover:text-brand-light"
+                  className="eyebrow text-navy/55 transition-colors hover:text-brand-dark"
                 >
                   {label}
                 </Link>
@@ -47,7 +47,7 @@ export default function Navbar() {
             <li>
               <Link
                 href="#contact"
-                className="rounded-full bg-brand px-5 py-2.5 text-[0.82rem] font-bold text-white transition-colors hover:bg-brand-light"
+                className="eyebrow border border-brand bg-brand px-6 py-3 text-white transition-colors hover:border-brand-dark hover:bg-brand-dark"
               >
                 Get a Quote
               </Link>
@@ -58,15 +58,15 @@ export default function Navbar() {
             onClick={() => setMobileOpen(true)}
             aria-label="Open menu"
           >
-            <span className="block h-0.5 w-6 rounded bg-white" />
-            <span className="block h-0.5 w-6 rounded bg-white" />
-            <span className="block h-0.5 w-6 rounded bg-white" />
+            <span className="block h-px w-6 bg-navy" />
+            <span className="block h-px w-6 bg-navy" />
+            <span className="block h-px w-6 bg-navy" />
           </button>
         </div>
       </nav>
 
       <div
-        className={`fixed inset-0 z-[999] flex flex-col items-center justify-center gap-9 bg-navy md:hidden ${
+        className={`fixed inset-0 z-[999] flex flex-col items-center justify-center gap-9 bg-paper md:hidden ${
           mobileOpen ? 'flex' : 'hidden'
         }`}
       >
@@ -74,7 +74,7 @@ export default function Navbar() {
           className="absolute right-7 top-6 p-1.5"
           onClick={() => setMobileOpen(false)}
         >
-          <svg width={28} height={28} viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={2}>
+          <svg width={28} height={28} viewBox="0 0 24 24" fill="none" stroke="#01041e" strokeWidth={2}>
             <line x1={18} y1={6} x2={6} y2={18} />
             <line x1={6} y1={6} x2={18} y2={18} />
           </svg>
@@ -83,7 +83,7 @@ export default function Navbar() {
           <Link
             key={href}
             href={href}
-            className="text-2xl font-bold uppercase tracking-widest text-white hover:text-brand-light"
+            className="font-display text-3xl text-navy hover:text-brand-dark"
             onClick={() => setMobileOpen(false)}
           >
             {label}
@@ -91,7 +91,7 @@ export default function Navbar() {
         ))}
         <Link
           href="#contact"
-          className="text-2xl font-bold uppercase tracking-widest text-brand-light"
+          className="eyebrow border border-brand bg-brand px-6 py-3 text-white"
           onClick={() => setMobileOpen(false)}
         >
           Get a Quote

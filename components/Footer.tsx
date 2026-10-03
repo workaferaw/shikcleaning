@@ -3,23 +3,29 @@ import Logo from './Logo'
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/[0.04] bg-[#000212] py-24 md:py-28">
+    <footer className="border-t border-white/10 bg-[#000212] py-24 md:py-28">
       <div className="mx-auto max-w-[1200px] px-7">
         <div className="mb-14 grid gap-14 sm:grid-cols-2 md:grid-cols-4 md:gap-16">
           <div className="sm:col-span-2 md:col-span-1">
-            <Link href="#" className="mb-4 flex items-center gap-2.5">
-              <Logo variant="dark" width={30} />
-              <span className="text-sm font-bold tracking-wide text-white">SHIK</span>
+            <Link href="#" className="mb-4 flex items-center gap-3">
+              <Logo variant="dark" width={26} />
+              <span className="font-display text-lg italic text-white">Shik</span>
             </Link>
             <p className="max-w-[280px] text-sm leading-relaxed text-white/40">
               Professional cleaning management for Addis Ababa&apos;s most demanding business environments.
             </p>
             <div className="mt-6 flex gap-2">
-              {['facebook', 'linkedin', 'instagram'].map((name) => (
+              {[
+                { name: 'facebook', href: '#' },
+                { name: 'linkedin', href: '#' },
+                { name: 'instagram', href: 'https://instagram.com/_shikcleaning' },
+              ].map(({ name, href }) => (
                 <a
                   key={name}
-                  href="#"
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.06] transition-colors hover:border-brand hover:bg-brand"
+                  href={href}
+                  target={href !== '#' ? '_blank' : undefined}
+                  rel={href !== '#' ? 'noopener noreferrer' : undefined}
+                  className="flex h-9 w-9 items-center justify-center border border-white/15 transition-colors hover:border-brand hover:bg-brand"
                 >
                   <span className="sr-only">{name}</span>
                   <svg className="h-[15px] w-[15px] text-white/65" viewBox="0 0 24 24" fill="currentColor">
@@ -38,9 +44,9 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <div className="mb-4 text-xs font-bold uppercase tracking-widest text-white">Services</div>
+            <div className="eyebrow mb-4 text-white/60">Services</div>
             <ul className="flex flex-col gap-2">
-              {['Marble Floor Cleaning', 'High-Rise Exterior', 'Wooden Floor Polishing', 'Fumigation', 'Window Cleaning'].map((item) => (
+              {['High-Rise & Window Glass', 'Post Construction', 'Deep Commercial & Residential', 'Corporate Janitorial', 'Ceramic, Parquet & SPC', 'Upholstery & Furniture'].map((item) => (
                 <li key={item}>
                   <Link href="#services" className="text-sm text-white/40 transition-colors hover:pl-1 hover:text-brand">
                     {item}
@@ -50,25 +56,25 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <div className="mb-4 text-xs font-bold uppercase tracking-widest text-white">Company</div>
+            <div className="eyebrow mb-4 text-white/60">Company</div>
             <ul className="flex flex-col gap-2">
-              <li><Link href="#clients" className="text-sm text-white/40 transition-colors hover:pl-1 hover:text-brand">About Us</Link></li>
+              <li><Link href="#who-we-serve" className="text-sm text-white/40 transition-colors hover:pl-1 hover:text-brand">About Us</Link></li>
               <li><Link href="#why-us" className="text-sm text-white/40 transition-colors hover:pl-1 hover:text-brand">Why Shik</Link></li>
               <li><Link href="#process" className="text-sm text-white/40 transition-colors hover:pl-1 hover:text-brand">Our Process</Link></li>
               <li><Link href="#contact" className="text-sm text-white/40 transition-colors hover:pl-1 hover:text-brand">Contact</Link></li>
             </ul>
           </div>
           <div>
-            <div className="mb-4 text-xs font-bold uppercase tracking-widest text-white">Contact</div>
+            <div className="eyebrow mb-4 text-white/60">Contact</div>
             <div className="space-y-2.5 text-sm text-white/40">
-              <div>0940270521/0900050611</div>
+              <div>0940270521/0997298286</div>
               <div>info@shikcleaning.com</div>
               <div>Mon – Sun: 24/7 Service</div>
               <div>Addis Ababa, Ethiopia</div>
             </div>
           </div>
         </div>
-        <div className="flex flex-wrap items-center justify-between gap-4 border-t border-white/[0.06] pt-6">
+        <div className="flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-6">
           <div className="text-xs text-white/25">&copy; 2026 Shik Cleaning Services. All rights reserved.</div>
           <div className="flex gap-5">
             <Link href="#" className="text-xs text-white/25 transition-colors hover:text-white/50">Privacy Policy</Link>

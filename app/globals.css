@@ -6,17 +6,15 @@
   --navy: #01041e;
   --navy-mid: #071535;
   --navy-light: #0d2a52;
-  --brand: #2B7FD4;
-  --brand-light: #1A5FA8;
+  --brand: #2F6FFF;
+  --brand-light: #7AA2FF;
+  --paper: #ffffff;
+  --paper-mid: #F3F5FA;
   --white: #ffffff;
   --text: #0d1321;
   --text-mid: #374151;
   --text-light: #6b7280;
   --border: #e5e7eb;
-  --shadow: 0 4px 24px rgba(1, 4, 30, 0.08);
-  --shadow-lg: 0 16px 48px rgba(1, 4, 30, 0.14);
-  --radius: 16px;
-  --radius-sm: 10px;
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
   --t: 0.3s var(--ease);
 }
@@ -24,7 +22,7 @@
 body {
   font-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
   color: var(--text);
-  background: var(--navy);
+  background: var(--paper);
   overflow-x: hidden;
   line-height: 1.6;
 }
@@ -33,16 +31,8 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ── Marquee animation ───────────────────── */
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-.animate-marquee {
-  animation: marquee 28s linear infinite;
-}
-.animate-marquee:hover {
-  animation-play-state: paused;
+#services, #clients, #who-we-serve, #why-us, #process, #contact {
+  scroll-margin-top: 88px;
 }
 
 /* ── Fade-in on scroll ───────────────────── */
@@ -66,11 +56,16 @@ html {
 .stagger > .reveal:nth-child(5) { animation-delay: 320ms; }
 .stagger > .reveal:nth-child(6) { animation-delay: 400ms; }
 
-/* ── Pulse glow on CTA buttons ───────────── */
-@keyframes pulseGlow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(43,127,212,.4); }
-  50%      { box-shadow: 0 0 0 10px rgba(43,127,212,0); }
+/* ── Editorial eyebrow label ─────────────── */
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
 }
-.pulse-glow {
-  animation: pulseGlow 2.5s ease-in-out infinite;
+
+/* ── Serif numerals used throughout ──────── */
+.num-display {
+  font-family: var(--font-serif-display), serif;
+  font-variant-numeric: lining-nums;
 }
